@@ -1,0 +1,22 @@
+{
+  "cash": 10000.0,
+  "running_peak_equity": 10000.0,
+  "cooldown_remaining": 0,
+  "open_positions": [],
+  "trades": [],
+  "t_idx": 1,
+  "last_processed_open_time": "2026-07-22T00:00:00+00:00",
+  "started_at": "2026-07-23T00:23:51.007619+00:00",
+  "bh_qty": 0.15110152101301846,
+  "bh_entry_price": 66114.49,
+  "equity_history": [
+    {
+      "date": "2026-07-22",
+      "price": 66114.49,
+      "action": "\u2014",
+      "equity": 10000.0,
+      "bh_value": 9990.0,
+      "return_pct": 0.0
+    }
+  ]
+}
