@@ -101,6 +101,38 @@ kombinatsiooni), mis leidis `config.SCENARIOS`-e 6. kirje ("Uuringu tulemus,
 soovituslik") ja valideeris selle puutumata 2024-2025 perioodil. Vt
 **RESEARCH.md** täieliku metoodika, tulemuste ja ausate piirangute jaoks.
 
+## Paper trading
+
+`paper_trade.py` jooksutab Stsenaarium 5 (`config.SCENARIOS[5]`) päris
+BTC/USDT turul, päris ajas, FIKTIIVSE rahaga — ei tee kunagi päris tehinguid.
+Olek püsib failis `paper_state.json`, inimloetav ajalugu failis
+`paper_trading_log.md`.
+
+Kasutab **täpselt sama otsustusloogikat** (`backtest_engine.step()`), mis
+backtesting — see on kavakohane: paper trading ja backtest ei tohi kunagi
+lahku minna sama koodi kasutamises.
+
+**Ajastus: kohalik launchd (mitte pilve-rutiin)**. Proovisime esmalt
+Claude Code pilve-rutiine, aga see keskkond blokeerib võrgupoliitikaga
+ligipääsu `api.binance.com`-ile (403, organisatsiooni egress-keeld) — see
+pole meie poolt lahendatav. Seetõttu jookseb see kohapeal, Sinu Macis:
+
+- **Iga päev kell 9:00**: `run_paper_trade.sh` — töötleb uued suletud
+  küünlad, saadab macOS teate AINULT kui reaalselt toimus tehing, ja
+  varundab oleku GitHub'i (`git push`, valikuline — olek püsib niikuinii
+  kohalikult, isegi kui push ebaõnnestub).
+- **Iga esmaspäev kell 9:15**: `run_weekly_summary.sh` — saadab alati
+  macOS teate nädala kokkuvõttega, sõltumata sellest, kas tehinguid toimus.
+
+Seadistatud `launchd`-iga (`~/Library/LaunchAgents/com.krypto.papertrading.*.plist`).
+Käsitsi käivitamine: `./run_paper_trade.sh` või `python paper_status.py`
+(näitab hetkeseisu ilma uut päeva töötlemata).
+
+**Tingimus**: see töötab ainult siis, kui Sinu Mac on käivitatud kell 9:00/9:15
+(unerežiimist launchd tavaliselt äratab, väljalülitatud arvutist mitte) —
+kui arvuti oli välja lülitatud, järgib skript idempotentselt järgmisel
+käivitusel kõik vahepealsed suletud küünlad korraga järele.
+
 ## Testid
 
 ```bash
