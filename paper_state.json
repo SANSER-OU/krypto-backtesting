@@ -4,8 +4,8 @@
   "cooldown_remaining": 0,
   "open_positions": [],
   "trades": [],
-  "t_idx": 45,
-  "last_processed_open_time": "2026-09-04T00:00:00+00:00",
+  "t_idx": 47,
+  "last_processed_open_time": "2026-09-06T00:00:00+00:00",
   "started_at": "2026-07-23T00:23:51.007619+00:00",
   "bh_qty": 0.15110152101301846,
   "bh_entry_price": 66114.49,
@@ -368,6 +368,22 @@
       "action": "\u2014",
       "equity": 10000.0,
       "bh_value": 12036.863512068232,
+      "return_pct": 0.0
+    },
+    {
+      "date": "2026-09-05",
+      "price": 79831.75,
+      "action": "\u2014",
+      "equity": 10000.0,
+      "bh_value": 12062.698850131037,
+      "return_pct": 0.0
+    },
+    {
+      "date": "2026-09-06",
+      "price": 80341.83,
+      "action": "\u2014",
+      "equity": 10000.0,
+      "bh_value": 12139.772713969358,
       "return_pct": 0.0
     }
   ]
