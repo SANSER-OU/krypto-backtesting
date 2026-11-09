@@ -1,11 +1,22 @@
 {
-  "cash": 10000.0,
+  "cash": 6666.666666666666,
   "running_peak_equity": 10000.0,
   "cooldown_remaining": 0,
-  "open_positions": [],
+  "open_positions": [
+    {
+      "entry_time": "2026-11-08T00:00:00+00:00",
+      "entry_price": 74851.44,
+      "size_usd": 3333.3333333333335,
+      "qty": 0.04448812207220061,
+      "peak_price": 74851.44,
+      "armed": false,
+      "entry_index": 109,
+      "scaled_out": false
+    }
+  ],
   "trades": [],
-  "t_idx": 109,
-  "last_processed_open_time": "2026-11-07T00:00:00+00:00",
+  "t_idx": 110,
+  "last_processed_open_time": "2026-11-08T00:00:00+00:00",
   "started_at": "2026-07-23T00:23:51.007619+00:00",
   "bh_qty": 0.15110152101301846,
   "bh_entry_price": 66114.49,
@@ -881,6 +892,14 @@
       "equity": 10000.0,
       "bh_value": 11463.70824459207,
       "return_pct": 0.0
+    },
+    {
+      "date": "2026-11-08",
+      "price": 74851.44,
+      "action": "\u2014",
+      "equity": 9996.666666666666,
+      "bh_value": 11310.16643401469,
+      "return_pct": -0.0333333333333394
     }
   ]
 }
